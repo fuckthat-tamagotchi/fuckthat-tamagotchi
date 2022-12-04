@@ -6,7 +6,7 @@ import { BNBTestnet } from "./Types/Chain";
 
 import "./App.css";
 import "@rainbow-me/rainbowkit/styles.css";
-import { Login } from "./Views/Login";
+import { Home } from "./Views/Home";
 import {
   darkTheme,
   getDefaultWallets,
@@ -46,7 +46,7 @@ function App() {
           <ChakraProvider>
             <div className="App">
               <Layout>
-                <Login />
+                <Home />
               </Layout>
             </div>
           </ChakraProvider>

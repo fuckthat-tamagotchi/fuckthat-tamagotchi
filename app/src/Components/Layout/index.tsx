@@ -2,7 +2,7 @@ import React from "react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { ReactFC } from "../../Types/ReactFC";
 import { Header, LayoutWrapper } from "./Styles";
-import { Flex, Spacer } from "@chakra-ui/react";
+import { Container, Flex, Spacer } from "@chakra-ui/react";
 
 export const Layout: ReactFC = ({ children }) => {
   return (
@@ -18,7 +18,7 @@ export const Layout: ReactFC = ({ children }) => {
           </Flex>
         </div>
       </Header>
-      <div>{children}</div>
+      <Container maxW={"max-content"}>{children}</Container>
     </LayoutWrapper>
   );
 };
