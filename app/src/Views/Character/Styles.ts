@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { colors, palette } from "../../Theme/colors";
+import { palette } from "../../Theme/colors";
 
 export const CharacterWrapper = styled.div``;
 

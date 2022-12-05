@@ -10,7 +10,9 @@ export const Layout: ReactFC = ({ children }) => {
       <Header>
         <div className="header-content">
           <Flex>
-            <span>fuckthat-tamagotchi</span>
+            <span onClick={() => window.location.assign("/")}>
+              fuckthat-tamagotchi
+            </span>
             <Spacer />
             <span className="connect-button">
               <ConnectButton />
