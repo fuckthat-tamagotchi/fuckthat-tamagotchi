@@ -3,9 +3,31 @@ import { colors, palette } from "../../Theme/colors";
 
 export const CharacterWrapper = styled.div``;
 
-export const CharacterLever = styled.div`
+export const CharacterLevel = styled.div<{ levelPercentage: number }>`
   color: ${palette.color2};
   font-weight: 600;
+  position: relative;
+  padding-bottom: 0.25rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: ${(props) => props.levelPercentage}%;
+    height: 2px;
+    background: ${palette.color2};
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.2);
+  }
 `;
 
 export const CharacterName = styled.div`

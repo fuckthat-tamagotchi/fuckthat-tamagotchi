@@ -3,19 +3,19 @@ import { ReactFC } from "../../Types/ReactFC";
 import {
   CharacterActions,
   CharacterImage,
-  CharacterLever,
+  CharacterLevel,
   CharacterName,
   CharacterWrapper,
 } from "./Styles";
 import Mutant from "../../Assets/Mutant.png";
-import { Box, Button, HStack, Stack } from "@chakra-ui/react";
+import { Button, Stack } from "@chakra-ui/react";
 import { palette } from "../../Theme/colors";
 
 export const Character: ReactFC = () => {
   return (
     <CharacterWrapper>
-      <CharacterLever>level 125</CharacterLever>
       <CharacterName>MUNHECO MALUCO</CharacterName>
+      <CharacterLevel levelPercentage={90}>level 125 - 90%</CharacterLevel>
       <CharacterImage>
         <span>
           <img src={Mutant} alt={Mutant} />
