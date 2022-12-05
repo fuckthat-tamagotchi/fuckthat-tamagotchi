@@ -6,6 +6,7 @@ import { Layout } from "./Components/Layout";
 import { wagmiClient, chains } from "./Config";
 import { WagmiConfig } from "wagmi";
 import { createHashRouter, RouterProvider } from "react-router-dom";
+import { Character3D } from "./Views/Character/Character3D";
 import { Character } from "./Views/Character";
 
 import "@rainbow-me/rainbowkit/styles.css";
@@ -19,6 +20,10 @@ const router = createHashRouter([
   {
     path: "/character",
     element: <Character />,
+  },
+  {
+    path: "/character-3d",
+    element: <Character3D />,
   },
 ]);
 

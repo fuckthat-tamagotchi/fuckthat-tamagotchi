@@ -2,6 +2,7 @@ import React from "react";
 import { Alert, AlertIcon } from "@chakra-ui/alert";
 import { useAccount } from "wagmi";
 import { MintButton } from "./Components/MintButton";
+import { Stack } from "@chakra-ui/react";
 
 export const Home = () => {
   const account = useAccount();
@@ -19,7 +20,15 @@ export const Home = () => {
         </>
       ) : null}
 
-      <MintButton />
+      <Stack
+        marginBottom={"1rem"}
+        justifyContent={"center"}
+        alignItems="center"
+        flexDirection={"column"}
+        width={"100%"}
+      >
+        <MintButton />
+      </Stack>
       <p>
         Welcome to the world of Tamagotchi! With this application, you can
         collect and care for your own virtual pets in a fun and interactive way.
