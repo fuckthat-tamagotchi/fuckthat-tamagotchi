@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 
-contract FuckThatTamagotchi is ERC721 {
+contract FuckThatTamagotchi is ERC721Enumerable {
     uint256 public totalMints = 0;
 
     uint256 public maxSupply = 50;
@@ -17,6 +17,8 @@ contract FuckThatTamagotchi is ERC721 {
     uint256 public lastPoopClean;
     uint256 public lastFeeding;
 
+    string public URI =
+        "https://bafybeifqmgyfy4by3gpms5sdv3ft3knccmjsqxfqquuxemohtwfm7y7nwa.ipfs.dweb.link/metadata.json";
     mapping(address => uint256) public walletMints;
     mapping(uint256 => Tamagotchi) tamagotchis;
     struct Tamagotchi {
