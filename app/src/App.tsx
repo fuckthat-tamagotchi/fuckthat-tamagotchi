@@ -5,13 +5,13 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { Layout } from "./Components/Layout";
 import { wagmiClient, chains } from "./Config";
 import { WagmiConfig } from "wagmi";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import { Character } from "./Views/Character";
 
 import "@rainbow-me/rainbowkit/styles.css";
 import "./App.css";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Home />,
