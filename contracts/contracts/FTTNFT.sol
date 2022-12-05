@@ -17,8 +17,6 @@ contract FuckThatTamagotchi is ERC721Enumerable {
     uint256 public lastPoopClean;
     uint256 public lastFeeding;
 
-    string public URI =
-        "https://bafybeifqmgyfy4by3gpms5sdv3ft3knccmjsqxfqquuxemohtwfm7y7nwa.ipfs.dweb.link/metadata.json";
     mapping(address => uint256) public walletMints;
     mapping(uint256 => Tamagotchi) tamagotchis;
     struct Tamagotchi {
@@ -77,7 +75,9 @@ contract FuckThatTamagotchi is ERC721Enumerable {
     }
 
     function cleanPoop(uint256 tokenId) public {
-        tamagotchis[tokenId].lastPoopClean = block.number;
+        uint256 poops = getPoops(tokenId);
+        uint256 poopsCleaned = poops * poopIncrament
+        tamagotchis[tokenId].lastPoopClean += poopsCleaned;
     }
 
     function adopt(uint256 tokenId) public {
