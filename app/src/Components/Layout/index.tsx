@@ -18,7 +18,7 @@ export const Layout: ReactFC = ({ children }) => {
           </Flex>
         </div>
       </Header>
-      <Container maxW={"max-content"}>{children}</Container>
+      <Container maxW={"container.xl"}>{children}</Container>
     </LayoutWrapper>
   );
 };

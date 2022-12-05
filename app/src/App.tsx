@@ -1,37 +1,26 @@
 import React from "react";
-import { configureChains, createClient, WagmiConfig } from "wagmi";
-import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
-
-import { BNBTestnet } from "./Types/Chain";
-
-import "./App.css";
-import "@rainbow-me/rainbowkit/styles.css";
 import { Home } from "./Views/Home";
-import {
-  darkTheme,
-  getDefaultWallets,
-  RainbowKitProvider,
-} from "@rainbow-me/rainbowkit";
+import { darkTheme, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { ChakraProvider } from "@chakra-ui/react";
 import { Layout } from "./Components/Layout";
+import { wagmiClient, chains } from "./Config";
+import { WagmiConfig } from "wagmi";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Character } from "./Views/Character";
 
-const chains = [BNBTestnet];
-const { provider } = configureChains(chains, [
-  jsonRpcProvider({
-    rpc: () => ({
-      http: BNBTestnet.rpcUrls.default,
-    }),
-  }),
+import "@rainbow-me/rainbowkit/styles.css";
+import "./App.css";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/character",
+    element: <Character />,
+  },
 ]);
-const { connectors } = getDefaultWallets({
-  appName: "FuckThat Tamagochi",
-  chains,
-});
-const wagmiClient = createClient({
-  autoConnect: true,
-  connectors,
-  provider,
-});
 
 function App() {
   return (
@@ -46,7 +35,7 @@ function App() {
           <ChakraProvider>
             <div className="App">
               <Layout>
-                <Home />
+                <RouterProvider router={router} />
               </Layout>
             </div>
           </ChakraProvider>
